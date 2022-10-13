@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "react-bootstrap";
+
+import "./App.css";
+import {
+  Boxes,
+  Contact,
+  Footer,
+  FQA,
+  Hero,
+  Instructors,
+  Learn,
+  Navbar,
+  Newsletter,
+} from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Navbar />
+      <Hero />
+      <Newsletter />
+      <Boxes />
+      <Learn
+        bg="dark"
+        text="light"
+        invert="-reverse"
+        btn="light"
+        title="See What is new!"
+        link="Go now"
+      />
+      <Learn />
+      <Learn
+        bg="dark"
+        text="light"
+        invert="-reverse"
+        btn="light"
+        title="Explore our new plans!"
+      />
+      <FQA />
+      <Instructors />
+      <Contact />
+      <Footer />
+    </ThemeProvider>
   );
 }
 
